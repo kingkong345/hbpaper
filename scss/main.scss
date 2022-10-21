@@ -1,2 +1,45 @@
 @import "vars";
 @import "mixins";
+
+#main-visual {
+  height: 100vh;
+  li {
+    position: relative;
+    &.visual01 .img {
+      background-image: url(../images/main/main-visual/mv_01.jpg);
+    }
+    &.visual02 .img {
+      background-image: url(../images/main/main-visual/mv_02.jpg);
+    }
+    &.swiper-slide-active {
+      .img {
+        transform: scale(1);
+      }
+    }
+    .img {
+      height: 100vh;
+      transform: scale(1.1);
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: all 5s ease;
+      transition-delay: 1s;
+    }
+    .txt {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      font-size: $h3;
+      text-align: center;
+      color: #fff;
+      transform: translate(-50%, -50%);
+      strong {
+        font-size: $h1 * 1.25;
+        font-weight: 700;
+        display: block;
+        margin-top: 20px;
+      }
+    }
+  }
+}
