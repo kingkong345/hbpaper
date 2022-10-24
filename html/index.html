@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/fullpage.css" />
     <link rel="stylesheet" href="../css/swiper-bundle.css" />
     <link rel="stylesheet" href="../css/splitting.css" />
     <link rel="stylesheet" href="../css/aos.css" />
@@ -22,6 +23,8 @@
     <script src="../js/gsap/ScrollToPlugin.min.js"></script>
     <script src="../js/splitting.min.js"></script>
     <script src="../js/aos.js"></script>
+    <script src="../js/circletype.min.js"></script>
+    <script src="../js/fullpage.min.js"></script>
   </head>
   <body>
     <header id="header">
@@ -83,31 +86,168 @@
         </div>
       </div>
     </header>
-    <div id="main-visual">
-      <div class="mask">
-        <ul class="swiper-wrapper">
-          <li class="swiper-slide visual01">
-            <div class="img"></div>
-            <div class="txt" data-splitting>
-              <p class="sub">자연의 선순환을 꿈꾸며 친환경 포장 문화를 만들어가는 기업</p>
-              <p class="main"><strong>HB PAPER</strong></p>
-            </div>
-          </li>
-          <li class="swiper-slide visual02">
-            <div class="img"></div>
-            <div class="txt" data-splitting>
-              <p class="sub">그 소중한 가치를 알기에 우리는 돌아가려고 합니다.</p>
-              <p class="main"><strong>자연으로, 스마트하게</strong></p>
-            </div>
-          </li>
-        </ul>
+    <main id="main">
+      <div id="main-visual" class="section">
+        <div class="mask">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide visual01">
+              <div class="img"></div>
+              <div class="txt" data-splitting>
+                <p class="sub">자연의 선순환을 꿈꾸며 친환경 포장 문화를 만들어가는 기업</p>
+                <p class="main"><strong>HB PAPER</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide visual02">
+              <div class="img"></div>
+              <div class="txt" data-splitting>
+                <p class="sub">그 소중한 가치를 알기에 우리는 돌아가려고 합니다.</p>
+                <p class="main"><strong>자연으로, 스마트하게</strong></p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+      <section id="business" class="section">
+        <div class="container">
+          <div class="title-box">
+            <h2>BUSINESS AREA</h2>
+            <p>
+              PFAS Free, Repulpable, Compostable의 가치는<br />
+              우리 HB PAPER가 나아가고자 하는 사업방향입니다.
+            </p>
+          </div>
+          <ul>
+            <li>
+              <a href=""> <img src="../images/main/BUSINESS AREA/main_01.jpg" alt="" /></a>
+              <div class="txt">
+                <h3>종이가공</h3>
+                <p>식품포장 · 테이크아웃 · 이커머스</p>
+              </div>
+            </li>
+            <li>
+              <a href=""> <img src="../images/main/BUSINESS AREA/main_02.jpg" alt="" /></a>
+              <div class="txt">
+                <h3>특수지</h3>
+                <p>친환경 코팅 · 친환경 인쇄</p>
+              </div>
+            </li>
+          </ul>
+          <div class="circle-txt" id="demo3">be nature, be smart</div>
+        </div>
+      </section>
+      <section id="product" class="section">
+        <div class="mask">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide product01">
+              <div class="container">
+                <div class="title-box">
+                  <h2>product</h2>
+                  <strong>종이식품용기</strong>
+                  <p>
+                    고품질의 크라프트 종이로 직접 생산하여 품질이 뛰어나고,<br />
+                    자체 보유한 최고급 인쇄기와 친환경 수성 잉크를 사용하여<br />
+                    고해상도 · 고품질의 인쇄가 가능합니다.
+                  </p>
+                  <a href="">more view</a>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product02">
+              <div class="container">
+                <div class="title-box">
+                  <h2>product</h2>
+                  <strong>종이봉투</strong>
+                  <p>
+                    고품질의 크라프트 종이로 직접 생산하여 품질이 뛰어나고,<br />
+                    자체 보유한 최고급 인쇄기와 친환경 수성 잉크를 사용하여<br />
+                    고해상도 · 고품질의 인쇄가 가능합니다.
+                  </p>
+                  <a href="">more view</a>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product03">
+              <div class="container">
+                <div class="title-box">
+                  <h2>product</h2>
+                  <strong>브라운메일러</strong>
+                  <p>
+                    고품질의 크라프트 종이로 직접 생산하여 품질이 뛰어나고,<br />
+                    자체 보유한 최고급 인쇄기와 친환경 수성 잉크를 사용하여<br />
+                    고해상도 · 고품질의 인쇄가 가능합니다.
+                  </p>
+                  <a href="">more view</a>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product04">
+              <div class="container">
+                <div class="title-box">
+                  <h2>product</h2>
+                  <strong>종이쇼핑백</strong>
+                  <p>
+                    고품질의 크라프트 종이로 직접 생산하여 품질이 뛰어나고,<br />
+                    자체 보유한 최고급 인쇄기와 친환경 수성 잉크를 사용하여<br />
+                    고해상도 · 고품질의 인쇄가 가능합니다.
+                  </p>
+                  <a href="">more view</a>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product05">
+              <div class="container">
+                <div class="title-box">
+                  <h2>product</h2>
+                  <strong>종이테이프</strong>
+                  <p>
+                    고품질의 크라프트 종이로 직접 생산하여 품질이 뛰어나고,<br />
+                    자체 보유한 최고급 인쇄기와 친환경 수성 잉크를 사용하여<br />
+                    고해상도 · 고품질의 인쇄가 가능합니다.
+                  </p>
+                  <a href="">more view</a>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product06">
+              <div class="container">
+                <div class="title-box">
+                  <h2>product</h2>
+                  <strong>종이완충제</strong>
+                  <p>
+                    고품질의 크라프트 종이로 직접 생산하여 품질이 뛰어나고,<br />
+                    자체 보유한 최고급 인쇄기와 친환경 수성 잉크를 사용하여<br />
+                    고해상도 · 고품질의 인쇄가 가능합니다.
+                  </p>
+                  <a href="">more view</a>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product07">
+              <div class="container">
+                <div class="title-box">
+                  <h2>product</h2>
+                  <strong>특수지</strong>
+                  <p>
+                    고품질의 크라프트 종이로 직접 생산하여 품질이 뛰어나고,<br />
+                    자체 보유한 최고급 인쇄기와 친환경 수성 잉크를 사용하여<br />
+                    고해상도 · 고품질의 인쇄가 가능합니다.
+                  </p>
+                  <a href="">more view</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
     <script>
       Splitting();
+
       const gnb = document.querySelector("#gnb");
       const header = document.querySelector("#header");
+      const visualTL = gsap.timeline();
+
       gnb.addEventListener("mouseenter", function () {
         header.classList.add("on");
       });
@@ -115,67 +255,56 @@
         header.classList.remove("on");
       });
 
-      const visual01TL = gsap.timeline();
-      const visual02TL = gsap.timeline();
-
       new Swiper("#main-visual .mask", {
         effect: "fade",
         on: {
+          slideChange: function () {
+            visualTxtAniReset();
+          },
           slideChangeTransitionEnd: function (swiper) {
-            if (swiper.realIndex === 0) {
-              visual01TL.restart();
-              visual02TL.pause(0);
-            } else {
-              visual02TL.restart();
-              visual01TL.pause(0);
-            }
+            visualTxtAni();
+            // visualTL.restart();
           },
         },
       });
-
-      visual01TL
-        .from("#main-visual .visual01 .sub .char", {
-          y: -100,
-          opacity: 0,
-          ease: "back",
-          duration: 1,
-          stagger: {
-            each: 0.02,
-          },
-        })
-        .from(
-          "#main-visual .visual01 .main .char",
-          {
-            x: 100,
-            opacity: 0,
+      visualTxtAniReset();
+      visualTxtAni();
+      function visualTxtAniReset() {
+        gsap.set("#main-visual li .sub .char", { opacity: 0, y: -100 });
+        gsap.set("#main-visual li .main .char", { opacity: 0, x: 100 });
+      }
+      function visualTxtAni() {
+        visualTL
+          .to("#main-visual .swiper-slide-active .sub .char", {
+            y: 0,
+            opacity: 1,
+            ease: "back",
+            duration: 1,
             stagger: {
-              each: 0.1,
+              each: 0.02,
             },
-          },
-          ">-0.5"
-        );
+          })
+          .to(
+            "#main-visual .swiper-slide-active .main .char",
+            {
+              x: 0,
+              opacity: 1,
+              stagger: {
+                each: 0.1,
+              },
+            },
+            ">-0.5"
+          );
+      }
 
-      visual02TL
-        .from("#main-visual .visual02 .sub .char", {
-          y: -100,
-          opacity: 0,
-          ease: "back",
-          duration: 1,
-          stagger: {
-            each: 0.02,
-          },
-        })
-        .from(
-          "#main-visual .visual02 .main .char",
-          {
-            x: 100,
-            opacity: 0,
-            stagger: {
-              each: 0.1,
-            },
-          },
-          ">-0.5"
-        );
+      const circleTxt = document.querySelector("#business .circle-txt");
+
+      const circleType = new CircleType(circleTxt);
+      circleType.radius(170).dir(1);
+
+      new Swiper("#product .mask", {});
+
+      new fullpage("#main", {});
     </script>
   </body>
 </html>

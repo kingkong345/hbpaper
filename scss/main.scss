@@ -2,7 +2,11 @@
 @import "mixins";
 
 #main-visual {
-  height: 100vh;
+  // height: 100vh;
+  overflow: hidden;
+  .mask {
+    overflow: hidden;
+  }
   li {
     position: relative;
     &.visual01 .img {
@@ -35,11 +39,123 @@
       color: #fff;
       transform: translate(-50%, -50%);
       strong {
-        font-size: $h1 * 1.25;
-        font-weight: 700;
         display: block;
         margin-top: 20px;
+        font-size: $h1 * 1.25;
+        font-weight: 700;
       }
     }
+  }
+}
+.section {
+  // display: flex;
+  // align-items: center;
+  // height: 100vh;
+  .title-box {
+    margin-bottom: 50px;
+    h2 {
+      font-size: $h4;
+      font-weight: 500;
+      color: $main-color;
+    }
+    p {
+      margin-top: 30px;
+      font-size: $h2 - 3px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+  }
+}
+
+#business {
+  overflow: hidden;
+  .container {
+    position: relative;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+      &:nth-last-child(1) {
+        margin-top: -40px;
+      }
+      img {
+        border-radius: 20px;
+      }
+      .txt {
+        margin-top: 30px;
+        h3 {
+          font-size: $h3;
+          font-weight: 500;
+        }
+        p {
+          margin-top: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .circle-txt {
+    position: absolute;
+    top: 0;
+    right: -100px;
+    z-index: 2;
+    font-size: $h2 - 4px;
+    font-weight: 500;
+    color: #ccc;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    width: 300px;
+    animation: circle-ani 20s linear infinite;
+  }
+}
+#product {
+  .title-box {
+    h2 {
+      text-transform: uppercase;
+    }
+    strong {
+      font-size: $h2;
+      font-weight: 700;
+      margin-top: 50px;
+      display: block;
+    }
+    p {
+      font-size: $h4 - 2px;
+      font-weight: 300;
+    }
+    a {
+      text-transform: uppercase;
+      display: block;
+      font-size: $h4;
+      font-weight: 500;
+      margin-top: 50px;
+      &::after {
+        content: "\f061";
+        font-family: "FontAwesome";
+        margin-left: 30px;
+      }
+    }
+  }
+  li {
+    background: cover;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  @for $i from 1 through 7 {
+    .product0#{$i} {
+      background-image: url(../images/main/product/ms3_0#{$i}.jpg);
+    }
+  }
+}
+
+@keyframes circle-ani {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }

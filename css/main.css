@@ -1,5 +1,8 @@
 #main-visual {
-  height: 100vh;
+  overflow: hidden;
+}
+#main-visual .mask {
+  overflow: hidden;
 }
 #main-visual li {
   position: relative;
@@ -33,8 +36,136 @@
   transform: translate(-50%, -50%);
 }
 #main-visual li .txt strong {
-  font-size: 60px;
-  font-weight: 700;
   display: block;
   margin-top: 20px;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.section .title-box {
+  margin-bottom: 50px;
+}
+.section .title-box h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #0e9447;
+}
+.section .title-box p {
+  margin-top: 30px;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+#business {
+  overflow: hidden;
+}
+#business .container {
+  position: relative;
+}
+#business ul {
+  display: flex;
+  justify-content: space-between;
+}
+#business ul li:nth-last-child(1) {
+  margin-top: -40px;
+}
+#business ul li img {
+  border-radius: 20px;
+}
+#business ul li .txt {
+  margin-top: 30px;
+}
+#business ul li .txt h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+#business ul li .txt p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+#business .circle-txt {
+  position: absolute;
+  top: 0;
+  right: -100px;
+  z-index: 2;
+  font-size: 32px;
+  font-weight: 500;
+  color: #ccc;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  width: 300px;
+  -webkit-animation: circle-ani 20s linear infinite;
+          animation: circle-ani 20s linear infinite;
+}
+
+#product .title-box h2 {
+  text-transform: uppercase;
+}
+#product .title-box strong {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 50px;
+  display: block;
+}
+#product .title-box p {
+  font-size: 18px;
+  font-weight: 300;
+}
+#product .title-box a {
+  text-transform: uppercase;
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 50px;
+}
+#product .title-box a::after {
+  content: "\f061";
+  font-family: "FontAwesome";
+  margin-left: 30px;
+}
+#product li {
+  background: cover;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+#product .product01 {
+  background-image: url(../images/main/product/ms3_01.jpg);
+}
+#product .product02 {
+  background-image: url(../images/main/product/ms3_02.jpg);
+}
+#product .product03 {
+  background-image: url(../images/main/product/ms3_03.jpg);
+}
+#product .product04 {
+  background-image: url(../images/main/product/ms3_04.jpg);
+}
+#product .product05 {
+  background-image: url(../images/main/product/ms3_05.jpg);
+}
+#product .product06 {
+  background-image: url(../images/main/product/ms3_06.jpg);
+}
+#product .product07 {
+  background-image: url(../images/main/product/ms3_07.jpg);
+}
+
+@-webkit-keyframes circle-ani {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes circle-ani {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
