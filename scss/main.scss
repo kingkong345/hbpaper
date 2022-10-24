@@ -111,6 +111,8 @@
 }
 #product {
   .title-box {
+    position: absolute;
+    top: 30%;
     h2 {
       text-transform: uppercase;
     }
@@ -146,7 +148,8 @@
 
   @for $i from 1 through 7 {
     .product0#{$i} {
-      background-image: url(../images/main/product/ms3_0#{$i}.jpg);
+      background: url(../images/main/product/ms3_0#{$i}.jpg) no-repeat;
+      background-size: cover;
     }
   }
 }

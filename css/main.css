@@ -99,6 +99,10 @@
           animation: circle-ani 20s linear infinite;
 }
 
+#product .title-box {
+  position: absolute;
+  top: 30%;
+}
 #product .title-box h2 {
   text-transform: uppercase;
 }
@@ -131,25 +135,32 @@
   overflow: hidden;
 }
 #product .product01 {
-  background-image: url(../images/main/product/ms3_01.jpg);
+  background: url(../images/main/product/ms3_01.jpg) no-repeat;
+  background-size: cover;
 }
 #product .product02 {
-  background-image: url(../images/main/product/ms3_02.jpg);
+  background: url(../images/main/product/ms3_02.jpg) no-repeat;
+  background-size: cover;
 }
 #product .product03 {
-  background-image: url(../images/main/product/ms3_03.jpg);
+  background: url(../images/main/product/ms3_03.jpg) no-repeat;
+  background-size: cover;
 }
 #product .product04 {
-  background-image: url(../images/main/product/ms3_04.jpg);
+  background: url(../images/main/product/ms3_04.jpg) no-repeat;
+  background-size: cover;
 }
 #product .product05 {
-  background-image: url(../images/main/product/ms3_05.jpg);
+  background: url(../images/main/product/ms3_05.jpg) no-repeat;
+  background-size: cover;
 }
 #product .product06 {
-  background-image: url(../images/main/product/ms3_06.jpg);
+  background: url(../images/main/product/ms3_06.jpg) no-repeat;
+  background-size: cover;
 }
 #product .product07 {
-  background-image: url(../images/main/product/ms3_07.jpg);
+  background: url(../images/main/product/ms3_07.jpg) no-repeat;
+  background-size: cover;
 }
 
 @-webkit-keyframes circle-ani {
