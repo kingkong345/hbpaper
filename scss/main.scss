@@ -117,8 +117,8 @@
     }
   }
   .title-box {
-    p {
-      font-size: $h4;
+    h2 {
+      text-transform: uppercase;
     }
     strong {
       display: block;
@@ -285,106 +285,9 @@
   }
 }
 
-#fp-nav {
-  transition: all 0.25s ease-in-out 0.5s;
-  &.color {
-    ul {
-      li {
-        a {
-          span {
-            background-color: #111 !important;
-            &::before {
-              border-color: #111;
-            }
-          }
-        }
-        .fp-tooltip {
-          color: #111;
-        }
-      }
-    }
-  }
-  &.fp-right {
-    right: 80px;
-  }
-  &.last {
-    right: -200px;
-  }
-  ul {
-    li {
-      width: 30px;
-      height: 30px;
-      margin: 30px 0;
-      $bg-color: #fff;
-      &:nth-last-child(1) {
-        display: none;
-      }
-      &:hover {
-        a,
-        a.active {
-          span {
-            background-color: $bg-color;
-            width: 5px;
-            height: 5px;
-            margin: 0;
-          }
-        }
-      }
-      a {
-        &.active {
-          span {
-            background-color: $bg-color;
-            width: 5px;
-            height: 5px;
-            margin: 0;
-            &::before {
-              transform: translate(-50%, -50%) scale(1);
-            }
-          }
-        }
-        span {
-          background-color: $bg-color;
-          width: 5px;
-          height: 5px;
-          margin: 0;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          box-sizing: border-box;
-          &::before {
-            content: "";
-            display: block;
-            width: 30px;
-            height: 30px;
-            // background-color: #fff;
-            border: 3px solid #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            border-radius: 100px;
-            transform: translate(-50%, -50%) scale(0);
-            transition: all 0.25s ease;
-          }
-        }
-      }
-      .fp-tooltip {
-        text-transform: uppercase;
-        top: 50%;
-        font-size: 16px;
-        font-family: "Roboto";
-        font-weight: 700;
-        transform: translateY(-50%);
-        color: #fff;
-        opacity: 0.5;
-        width: auto;
-        &.fp-right {
-          right: 50px;
-        }
-      }
-      a.active + .fp-tooltip {
-        opacity: 1;
-      }
-    }
+@for $i from 1 through 7 {
+  .product0#{$i} {
+    background-image: url(../images/main/product/ms3_0#{$i}.jpg);
   }
 }
 
