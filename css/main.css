@@ -68,7 +68,7 @@
   letter-spacing: 0.5em;
   text-transform: uppercase;
   -webkit-animation: circle-ani 20s linear infinite;
-          animation: circle-ani 20s linear infinite;
+  animation: circle-ani 20s linear infinite;
 }
 
 #business {
