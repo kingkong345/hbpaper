@@ -28,16 +28,17 @@ button {
 
 #header {
   height: 100px;
-  overflow: hidden;
-  transition: all 0.25s ease;
   color: #fff;
   position: fixed;
   width: 100%;
   z-index: 999;
   &.on {
-    height: 400px;
-    background-color: #fff;
-    color: #222;
+    color: #111;
+    #gnb {
+      height: 400px;
+      background-color: #fff;
+      color: #222;
+    }
     #logo {
       a {
         .logo-color {
@@ -49,30 +50,24 @@ button {
       }
     }
   }
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 350px;
-    left: 0;
-    top: 100px;
-    background-color: #eee;
-  }
-  &::after {
-    display: block;
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    top: 100px;
-    content: "";
-    background-color: rgba(0, 0, 0, 0.1);
-    pointer-events: none;
+  &.color {
+    color: #111;
+    #logo {
+      a {
+        .logo-color {
+          opacity: 1;
+        }
+        .logo-white {
+          opacity: 0;
+        }
+      }
+    }
   }
   .container {
     display: flex;
     justify-content: center;
     position: relative;
+    z-index: 2;
   }
   #logo {
     position: absolute;
@@ -91,8 +86,17 @@ button {
     }
   }
   #gnb {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.25s ease;
     .list {
       display: flex;
+      position: relative;
+      z-index: 2;
       > li {
         text-align: center;
         &:hover {
@@ -133,6 +137,26 @@ button {
           }
         }
       }
+    }
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 350px;
+      left: 0;
+      top: 100px;
+      background-color: #eee;
+    }
+    &::after {
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      top: 100px;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.1);
+      pointer-events: none;
     }
   }
   .util {
@@ -177,6 +201,37 @@ button {
           }
         }
       }
+    }
+  }
+}
+
+#footer {
+  background-color: #222;
+  color: #fff;
+  .util-box {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px 0;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      ul {
+        display: flex;
+        li {
+          margin-right: 30px;
+          font-weight: 500;
+          &:nth-last-child(1) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .addr-box {
+    padding: 30px 0;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+    address {
+      margin-bottom: 10px;
     }
   }
 }
