@@ -23,7 +23,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 5s ease;
-  transition-delay: 1s;
+  transition-delay: 0.5s;
 }
 #main-visual li .txt {
   position: absolute;
@@ -37,10 +37,11 @@
 }
 #main-visual li .txt strong {
   display: block;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 60px;
   font-weight: 700;
 }
+
 .section .title-box {
   margin-bottom: 50px;
 }
@@ -67,8 +68,9 @@
   letter-spacing: 0.5em;
   text-transform: uppercase;
   -webkit-animation: circle-ani 20s linear infinite;
-  animation: circle-ani 20s linear infinite;
+          animation: circle-ani 20s linear infinite;
 }
+
 #business {
   overflow: hidden;
 }
@@ -96,6 +98,7 @@
   margin-top: 10px;
   font-size: 18px;
 }
+
 #product .product01 {
   background-image: url("../images/main/product/ms3_01.jpg");
 }
@@ -117,8 +120,8 @@
 #product .product07 {
   background-image: url("../images/main/product/ms3_07.jpg");
 }
-#product .title-box p {
-  font-size: 20px;
+#product .title-box h2 {
+  text-transform: uppercase;
 }
 #product .title-box strong {
   display: block;
@@ -136,7 +139,7 @@
 #product .title-box a:after {
   margin-left: 30px;
   font-family: "FontAwesome";
-  content: "";
+  content: "\f061";
 }
 #product li {
   display: flex;
@@ -197,6 +200,7 @@
   background-color: #111;
   transform-origin: 0 50%;
 }
+
 #news .container {
   display: flex;
   justify-content: space-between;
@@ -220,7 +224,7 @@
 #news .container .title-box a:after {
   margin-left: 30px;
   font-family: "FontAwesome";
-  content: "";
+  content: "\f061";
 }
 #news .container .contents-box {
   width: 1000px;
@@ -273,25 +277,26 @@
   margin-top: 30px;
 }
 #news .container .contents-box .notice-list-box li a .more::after {
-  content: "";
+  content: "\f061";
   font-family: "FontAwesome";
   display: block;
   margin-top: 20px;
 }
+
 #fp-nav {
   transition: all 0.25s ease-in-out 0.5s;
 }
 #fp-nav.color ul li a span {
   background-color: #111 !important;
 }
-#fp-nav.color ul li a span::before {
+#fp-nav.color ul li a span:before {
   border-color: #111;
 }
 #fp-nav.color ul li .fp-tooltip {
   color: #111;
 }
 #fp-nav.fp-right {
-  right: 80px;
+  right: 50px;
 }
 #fp-nav.last {
   right: -200px;
@@ -306,60 +311,88 @@
 }
 #fp-nav ul li:hover a span,
 #fp-nav ul li:hover a.active span {
-  background-color: #fff;
   width: 5px;
   height: 5px;
+  background-color: #fff;
   margin: 0;
 }
 #fp-nav ul li a.active span {
-  background-color: #fff;
   width: 5px;
   height: 5px;
+  background-color: #fff;
   margin: 0;
 }
-#fp-nav ul li a.active span::before {
+#fp-nav ul li a.active span:before {
   transform: translate(-50%, -50%) scale(1);
 }
 #fp-nav ul li a span {
-  background-color: #fff;
   width: 5px;
   height: 5px;
+  background-color: #fff;
   margin: 0;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
 }
-#fp-nav ul li a span::before {
+#fp-nav ul li a span:before {
+  transition: all 0.25s ease;
   content: "";
   display: block;
   width: 30px;
   height: 30px;
   border: 3px solid #fff;
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   border-radius: 100px;
   transform: translate(-50%, -50%) scale(0);
-  transition: all 0.25s ease;
 }
 #fp-nav ul li .fp-tooltip {
   text-transform: uppercase;
   top: 50%;
+  transform: translateY(-50%);
   font-size: 16px;
   font-family: "Roboto";
   font-weight: 700;
-  transform: translateY(-50%);
-  color: #fff;
   opacity: 0.5;
   width: auto;
 }
 #fp-nav ul li .fp-tooltip.fp-right {
-  right: 50px;
+  right: 60px;
 }
 #fp-nav ul li a.active + .fp-tooltip {
   opacity: 1;
 }
+
+.product01 {
+  background-image: url(../images/main/product/ms3_01.jpg);
+}
+
+.product02 {
+  background-image: url(../images/main/product/ms3_02.jpg);
+}
+
+.product03 {
+  background-image: url(../images/main/product/ms3_03.jpg);
+}
+
+.product04 {
+  background-image: url(../images/main/product/ms3_04.jpg);
+}
+
+.product05 {
+  background-image: url(../images/main/product/ms3_05.jpg);
+}
+
+.product06 {
+  background-image: url(../images/main/product/ms3_06.jpg);
+}
+
+.product07 {
+  background-image: url(../images/main/product/ms3_07.jpg);
+}
+
 @-webkit-keyframes circle-ani {
   0% {
     transform: rotate(0);
@@ -368,6 +401,7 @@
     transform: rotate(-360deg);
   }
 }
+
 @keyframes circle-ani {
   0% {
     transform: rotate(0);

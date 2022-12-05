@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <link rel="shortcut icon" href="../images/fovicon/favicon3.png" type="image/x-icon" />
     <title>HB PAPER</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/aos.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
     <script src="../js/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/08ebc00fc6.js" crossorigin="anonymous"></script>
     <script src="../js/gsap/gsap.min.js"></script>
@@ -25,6 +26,7 @@
     <script src="../js/aos.js"></script>
     <script src="../js/circletype.min.js"></script>
     <script src="../js/fullpage.min.js"></script>
+    <script src="../js/main.js" defer></script>
   </head>
   <body>
     <header id="header">
@@ -86,6 +88,11 @@
           </li>
         </ul>
       </nav>
+      <button class="btn-all">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
     <main id="main">
       <div id="main-visual" class="section">
@@ -117,15 +124,15 @@
               우리 HB PAPER가 나아가고자 하는 사업방향입니다.
             </p>
           </div>
-          <ul>
-            <li>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
               <a href=""> <img src="../images/main/BUSINESS AREA/main_01.jpg" alt="" /></a>
               <div class="txt">
                 <h3>종이가공</h3>
                 <p>식품포장 · 테이크아웃 · 이커머스</p>
               </div>
             </li>
-            <li>
+            <li class="swiper-slide">
               <a href=""> <img src="../images/main/BUSINESS AREA/main_02.jpg" alt="" /></a>
               <div class="txt">
                 <h3>특수지</h3>
@@ -301,15 +308,17 @@
       <footer id="footer" class="footer section fp-auto-height">
         <div class="util-box">
           <div class="container">
-            <ul class="product-list">
-              <li><a href="">종이식품용기</a></li>
-              <li><a href="">종이봉투</a></li>
-              <li><a href="">브라운메일러</a></li>
-              <li><a href="">종이쇼핑백</a></li>
-              <li><a href="">종이테이프</a></li>
-              <li><a href="">종이완충재</a></li>
-              <li><a href="">특수지</a></li>
-            </ul>
+            <div class="mask">
+              <ul class="product-list swiper-wrapper">
+                <li class="swiper-slide"><a href="">종이식품용기</a></li>
+                <li class="swiper-slide"><a href="">종이봉투</a></li>
+                <li class="swiper-slide"><a href="">브라운메일러</a></li>
+                <li class="swiper-slide"><a href="">종이쇼핑백</a></li>
+                <li class="swiper-slide"><a href="">종이테이프</a></li>
+                <li class="swiper-slide"><a href="">종이완충재</a></li>
+                <li class="swiper-slide"><a href="">특수지</a></li>
+              </ul>
+            </div>
             <ul class="util">
               <li><a href="">회사소개</a></li>
               <li><a href="">사업소개</a></li>
@@ -327,210 +336,6 @@
       </footer>
     </main>
 
-    <script>
-      Splitting();
-
-      const gnb = document.querySelector("#gnb");
-      const header = document.querySelector("#header");
-      const line = document.querySelector("#product .line");
-
-      const visualTL = gsap.timeline();
-
-      // 함수 표현식(expression)
-      // 경력자 vs 신입
-      const visualTxtAni02 = function () {
-        visualTL
-          .from("#main-visual .swiper-slide-active .sub .char", {
-            y: -100,
-            opacity: 0,
-            ease: "back",
-            duration: 1,
-            stagger: {
-              each: 0.02,
-            },
-          })
-          .from(
-            "#main-visual .swiper-slide-active .main .char",
-            {
-              x: 100,
-              opacity: 0,
-              stagger: {
-                each: 0.1,
-              },
-            },
-            ">-0.5"
-          );
-      };
-
-      // 익명함수 call back 함수
-
-      // const headerOn = function () {
-      //   header.classList.add("on");
-      // };
-      // const headerOff = function () {
-      //   header.classList.remove("on");
-      // };
-
-      // gnb.addEventListener("mouseenter", headerOn);
-      // gnb.addEventListener("mouseleave", headerOff);
-
-      gnb.addEventListener("mouseenter", function () {
-        header.classList.add("on");
-      });
-      gnb.addEventListener("mouseleave", function () {
-        header.classList.remove("on");
-      });
-
-      //비동기 (asynchronous)
-
-      new Swiper("#main-visual .mask", {
-        effect: "fade",
-        initialSlide: 0,
-        //loop: true,
-        on: {
-          slideChange: function () {
-            visualTxtAniReset();
-          },
-          slideChangeTransitionEnd: function (swiper) {
-            visualTxtAni();
-          },
-        },
-      });
-      visualTxtAniReset();
-      visualTxtAni();
-
-      // 함수를 선언한다.  function declation  문장
-      function visualTxtAniReset() {
-        gsap.set("#main-visual li .sub .char", { opacity: 0, y: -100 });
-        gsap.set("#main-visual li .main .char", { opacity: 0, x: 100 });
-      }
-      function visualTxtAni() {
-        visualTL
-          .to("#main-visual .swiper-slide-active .sub .char", {
-            y: 0,
-            opacity: 1,
-            ease: "back",
-            duration: 1,
-            stagger: {
-              each: 0.02,
-            },
-          })
-          .to(
-            "#main-visual .swiper-slide-active .main .char",
-            {
-              x: 0,
-              opacity: 1,
-              stagger: {
-                each: 0.1,
-              },
-            },
-            ">-0.5"
-          );
-      }
-
-      // 함수 선언문
-      function makeCircleTxt(txt, _radius = 170, _dir = 1) {
-        const circleTxt = document.querySelector(txt);
-        const circleType = new CircleType(circleTxt);
-        circleType.radius(_radius).dir(_dir);
-      }
-      makeCircleTxt("#business .circle-txt");
-      makeCircleTxt("#product .circle-txt");
-
-      const productTL = gsap.timeline();
-      const productSlider = new Swiper("#product .mask", {
-        effect: "fade",
-        duration: 1000,
-        pagination: {
-          el: "#product .pagination",
-        },
-        autoplay: {
-          delay: 5000,
-        },
-        on: {
-          slideChange: function (swiper) {
-            //line.style.width = `${(swiper.realIndex / 6) * 100}%`;
-            //gsap.set(line, { width: `${(swiper.realIndex / 6) * 100}%` });
-            gsap.set(line, { scaleX: swiper.realIndex / 6 });
-            gsap.set("#product li .title-box h2", { opacity: 0, y: 100 });
-            gsap.set("#product li .title-box strong", { opacity: 0, y: 100 });
-            gsap.set("#product li .title-box p", { opacity: 0, y: 100 });
-            gsap.set("#product li .title-box a", { opacity: 0, y: 100 });
-          },
-          // > end기준  <  start 기준
-          slideChangeTransitionEnd: function () {
-            productTL
-              .to("#product .swiper-slide-active .title-box h2", { opacity: 1, y: 0, ease: "back", duration: 1 })
-              .to("#product .swiper-slide-active .title-box strong", { opacity: 1, y: 0, ease: "back", duration: 1 }, "<+0.15")
-              .to("#product .swiper-slide-active .title-box p", { opacity: 1, y: 0, ease: "back", duration: 1 }, "<+0.15")
-              .to("#product .swiper-slide-active .title-box a", { opacity: 1, y: 0, ease: "back", duration: 1 }, "<+0.15");
-          },
-        },
-      });
-
-      const btnPlay = document.querySelector("#product .btn-play");
-      const btnPause = document.querySelector("#product .btn-pause");
-
-      btnPause.addEventListener("click", function () {
-        btnPause.style.display = "none";
-        btnPlay.style.display = "block";
-        productSlider.autoplay.stop();
-        //btnPause.style["font-size"]="none";
-        //btnPause.style.fontSize="35px";
-      });
-      btnPlay.addEventListener("click", function () {
-        btnPause.style.display = "block";
-        btnPlay.style.display = "none";
-        productSlider.autoplay.start();
-        //btnPause.style["font-size"]="none";
-        //btnPause.style.fontSize="35px";
-      });
-
-      new Swiper("#news .notice-list-box", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      });
-
-      window.addEventListener("scroll", function () {
-        console.log(window.scrollY);
-      });
-
-      const businessTL = gsap.timeline();
-      // prettier-ignore
-      businessTL.from("#business .title-box h2",{opacity:0,y:100})
-                .from("#business .title-box p",{opacity:0,y:100})
-                .from("#business ul li",{opacity:0,y:100,stagger:0.1})
-
-      new fullpage("#main", {
-        navigation: true,
-        navigationTooltips: ["intro", "business", "product", "news"],
-        scrollOverflow: false,
-        onLeave: function (origin, destination, direction, trigger) {
-          console.log(origin);
-          if (destination.index === 1) {
-            header.classList.add("color");
-            businessTL.restart();
-          }
-          if (destination.index === 0) {
-            header.classList.remove("color");
-            fpNav.classList.remove("color");
-          }
-          if (destination.index !== 0) {
-            fpNav.classList.add("color");
-          }
-          if (destination.isLast) {
-            fpNav.classList.add("last");
-          } else {
-            fpNav.classList.remove("last");
-          }
-        },
-        afterLoad: function (origin, destination, direction, trigger) {
-          //console.log(destination.index);
-          if (destination.index === 1) {
-          }
-        },
-      });
-      const fpNav = document.querySelector("#fp-nav");
-    </script>
+    <script></script>
   </body>
 </html>

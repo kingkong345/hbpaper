@@ -2,7 +2,8 @@
 @import "mixins";
 
 #main-visual {
-  // height: 100vh;
+  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   .mask {
     overflow: hidden;
@@ -34,44 +35,46 @@
       top: 50%;
       left: 50%;
       z-index: 2;
-      font-size: $h3;
+      font-size: 16px;
       text-align: center;
+      line-height: 1.5;
       color: #fff;
       transform: translate(-50%, -50%);
       strong {
         display: block;
         margin-top: 20px;
-        font-size: $h1 * 1.25;
+        font-size: clamp(20px, 7.25vw, 36px);
         font-weight: 700;
       }
     }
   }
 }
 .section {
-  // display: flex;
-  // align-items: center;
-  // height: 100vh;
+  height: 100vh;
+  min-height: 100vh;
   .title-box {
     margin-bottom: 50px;
     h2 {
-      font-size: $h4;
+      font-size: 16px;
       font-weight: 500;
       color: $main-color;
     }
     p {
       margin-top: 30px;
-      font-size: $h2 - 3px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 1.25;
+      br {
+        content: "";
+      }
     }
   }
   .circle-txt {
-    width: 300px;
     position: absolute;
     top: 0px;
     right: 80px;
     z-index: 2;
-    font-size: $h2 - 4px;
+    font-size: 18px;
     font-weight: 500;
     color: #ccc;
     letter-spacing: 0.5em;
@@ -81,29 +84,29 @@
 }
 
 #business {
+  height: auto;
+  min-height: 50vh;
   overflow: hidden;
   .container {
     position: relative;
+    padding: 20px;
   }
   ul {
     display: flex;
-    justify-content: space-between;
     li {
-      &:nth-last-child(1) {
-        margin-top: -40px;
-      }
       img {
+        width: 100%;
         border-radius: 20px;
       }
       .txt {
         margin-top: 30px;
         h3 {
-          font-size: $h3;
+          font-size: 16px;
           font-weight: 500;
         }
         p {
           margin-top: 10px;
-          font-size: 18px;
+          font-size: 16px;
         }
       }
     }
@@ -111,25 +114,30 @@
 }
 
 #product {
+  height: auto;
+  min-height: auto;
+  ul .container {
+    padding: 20px 20px 200px 20px;
+  }
   @for $i from 1 through 7 {
     .product0#{$i} {
       background-image: url("../images/main/product/ms3_0#{$i}.jpg");
     }
   }
   .title-box {
-    h2 {
-      text-transform: uppercase;
+    p {
+      font-size: 14px;
     }
     strong {
       display: block;
-      margin-top: 50px;
-      font-size: $h2;
+      margin-top: 20px;
+      font-size: 20px;
       font-weight: 700;
     }
     a {
       display: block;
       margin-top: 50px;
-      font-size: $h4;
+      font-size: 16px;
       font-weight: 500;
       text-transform: uppercase;
       &:after {
@@ -142,17 +150,18 @@
   li {
     display: flex;
     align-items: center;
-    height: 100vh;
+    background-position: 50% 50%;
+    height: auto;
     background-size: cover;
   }
   .circle-txt {
-    top: 200px;
-    right: 300px;
+    top: 30px;
+    right: 100px;
   }
   .control-box {
     width: 100%;
     position: absolute;
-    bottom: 100px;
+    bottom: 30px;
     z-index: 3;
     .container {
       display: flex;
@@ -175,8 +184,8 @@
         width: 8px;
         height: 8px;
         margin: 0;
-        margin-right: 30px;
-        border: 1px solid #111;
+        margin-right: 20px;
+        border: 3px solid #111;
         opacity: 1;
         background-color: #fff;
         &-active {
@@ -194,7 +203,7 @@
       top: 50%;
       left: 0;
       z-index: -1;
-      margin-top: -1px;
+      margin-top: -3px;
       transition: all 5s linear;
       background-color: #111;
       transform-origin: 0 50%;
@@ -203,23 +212,31 @@
 }
 
 #news {
+  height: auto;
+  min-height: auto;
+  overflow: hidden;
   .container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    padding: 20px;
     .title-box {
       p {
-        font-size: $h4;
+        font-size: 16px;
       }
       strong {
         display: block;
-        margin-top: 50px;
-        font-size: $h2;
+        margin-top: 20px;
+        font-size: 20px;
         font-weight: 700;
+        br {
+          content: "";
+        }
       }
       a {
         display: block;
-        margin-top: 50px;
-        font-size: $h4;
+        margin-top: 20px;
+        font-size: 16px;
         font-weight: 500;
         text-transform: uppercase;
         &:after {
@@ -230,19 +247,25 @@
       }
     }
     .contents-box {
-      width: 1000px;
+      width: 100%;
       .notice {
         display: flex;
-        padding: 30px 20px;
-        font-size: $h4;
+        padding: 15px 10px;
+        font-size: 14px;
         border-top: 2px solid #111;
         border-bottom: 1px solid #111;
+        align-items: center;
+        .sticker {
+          white-space: nowrap;
+        }
         p {
           font-weight: 500;
-          margin-left: 30px;
+          margin-left: 10px;
+          @include ellipsis;
         }
         .date {
           margin-left: auto;
+          display: none;
         }
       }
       .notice-list-box {
